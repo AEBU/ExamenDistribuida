@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hola</title>
+</head>
+<body>
+    <!--<h3 th:text="${page.number+1}+'of+${page.totalPages}'"></h3>-->
+<h1>Crear Instrumento</h1>
+<form th:object="${instrument}" th:action="@{/instrument/save}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <!--<input type="hidden" th:field="*{cntNombre}" />-->
+        <div >
+            <label>Instrument Name </label>
+                <input type="text"  th:field="*{instrumentName}" />
+        </div>
+
+        <button type="submit">Crear</button>
+    </form>
+
+</body>
+</html>

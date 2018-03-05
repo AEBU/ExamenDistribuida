@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Examen</title>
+</head>
+<body>
+    <!--<h3 th:text="${page.number+1}+'of+${page.totalPages}'"></h3>-->
+<h1>Crear Singer</h1>
+<form th:object="${singer}" th:action="@{/singer/save}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <!--<input type="hidden" th:field="*{cntNombre}" />-->
+        <div >
+            <label>Singer FirstName </label>
+                <input type="text"  th:field="*{firstName}" />
+        </div>
+        <div >
+            <label>Singer LastName </label>
+            <input type="text"  th:field="*{lastName}" />
+        </div>
+
+        <div >
+            <label>Singer email </label>
+            <input type="text"  th:field="*{email}" />
+        </div>
+
+        <button type="submit">Crear</button>
+    </form>
+
+</body>
+</html>

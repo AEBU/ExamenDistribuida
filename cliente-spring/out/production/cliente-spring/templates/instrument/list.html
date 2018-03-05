@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Listar</title>
+</head>
+<body>
+<div>
+    <!--<h3 th:text="${page.number+1}+'of+${page.totalPages}'"></h3>-->
+    <table>
+        <thead>
+        <tr>
+            <th>Instrument Name</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="persona : ${instruments}">
+            <td th:text = "${persona.instrumentName}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
